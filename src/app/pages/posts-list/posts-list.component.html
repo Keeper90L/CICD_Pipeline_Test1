@@ -1,0 +1,15 @@
+<p>Post para pinchar</p>
+
+<ul>
+    @for (p of posts$ | async; track p.id) {
+        <li>
+            <a [routerLink]="['/posts', p.id]">{{p.title}}</a> 
+            <!-- Se resume en poner /posts / el id que quiera-->
+        </li>
+    }@empty {
+            <li>No hay posts</li>
+        }
+
+    
+
+</ul>
